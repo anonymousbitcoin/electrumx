@@ -6,13 +6,16 @@ WORKDIR /home/anonuser
 # Install zcl dependencies
 RUN apt-get update
 RUN apt-get install -y apt-utils
-RUN apt-get install -y libleveldb1 libleveldb-dev
+RUN apt-get install -y libleveldb1v5docke libleveldb-dev
 RUN apt-get install -y build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python zlib1g-dev wget bsdmainutils automake
 
 # Build zcl node daemon
 RUN git clone https://github.com/anonymousbitcoin/anon.git
 RUN mkdir /home/anonuser/anon_electrum_db
-RUN /home/anonuser/anon/anonutil/build.sh 
+# RUN /home/anonuser/anon/anonutil/build.sh
+RUN /home/anonuser/anon/autogen.sh
+RUN /home/anonuser/anon/configure 
+RUN /home/anonuser/anon/MAKE
 
 # Install electrumx dependencies
 RUN pip install pylru==1.0.9

@@ -953,22 +953,22 @@ class BitcoinPrivateTestnet(EquihashMixin, Coin):
     REORG_LIMIT = 800
     CHUNK_SIZE = 200
 
-# class ANON(EquihashMixin, Coin):
-#     NAME = "ANON"
-#     SHORTNAME = "ANON"
-#     NET = "mainnet"
-#     P2PKH_VERBYTE = bytes.fromhex("0582")
-#     P2SH_VERBYTES = [bytes.fromhex("5389")]
-#     WIF_BYTE = bytes.fromhex("80")
-#     GENESIS_HASH         = ( '0007104ccda289427919efc39dc9e4d4'
-#                              '99804b7bebc22df55f8b834301260602')
-#     DESERIALIZER = lib_tx.DeserializerZcash
-#     TX_COUNT = 329196
-#     TX_COUNT_HEIGHT = 68379
-#     TX_PER_BLOCK = 5
-#     RPC_PORT = 7932
-#     REORG_LIMIT = 800
-#     CHUNK_SIZE = 200
+class ANON(EquihashMixin, Coin):
+    NAME = "ANON"
+    SHORTNAME = "ANON"
+    NET = "mainnet"
+    P2PKH_VERBYTE = bytes.fromhex("0582")
+    P2SH_VERBYTES = [bytes.fromhex("5389")]
+    WIF_BYTE = bytes.fromhex("80")
+    GENESIS_HASH         = ( '053a237d7ad7106e341a403286604df5'
+                             '5bfe6f301fc9fff03a06f81c8c565b34')
+    DESERIALIZER = lib_tx.DeserializerZcash
+    TX_COUNT = 329196
+    TX_COUNT_HEIGHT = 68379
+    TX_PER_BLOCK = 5
+    RPC_PORT = 7932
+    REORG_LIMIT = 800
+    CHUNK_SIZE = 200
 
 class ANONTestnet(EquihashMixin, Coin):
     NAME = "ANON"
